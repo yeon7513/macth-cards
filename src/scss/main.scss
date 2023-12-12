@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+
+body {
+  background-color: #212121;
+}
+
+.intro {
+  height: 100vh;
+  color: #eee;
+  .intro-title {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-weight: normal;
+      font-size: 150px;
+      text-align: center;
+      span {
+        display: block;
+        line-height: 1;
+      }
+    }
+  }
+  .intro-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .info-open {
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      width: 35px;
+      height: 35px;
+      border: 1px solid #eee;
+      border-radius: 50%;
+      background-color: transparent;
+      color: #eee;
+      cursor: pointer;
+      transition-duration: .3s;
+      &:hover {
+        width: 120px;
+        border-radius: 35px;
+        transition-duration: .3s;
+        .sign {
+          width: 30%;
+        }
+        .open-text {
+          opacity: 1;
+          width: 70%;
+          padding-right: 10px;
+        }
+      }
+      &:active {
+        transform: translate(2px, 2px);
+      }
+      .sign {
+        width: 100%;
+        transition-duration: .3s;
+      }
+      .open-text {
+        position: absolute;
+        right: 0;
+        width: 0%;
+        opacity: 0;
+        transition-duration: .3s;
+      }
+    }
+    .info-how {
+      position: absolute;
+      top: 0; left: 0;
+      z-index: 5;
+      width: 100%;
+      height: 100%;
+      font-family: 'Pretendard-Regular', sans-serif;
+      background-color: rgba(0,0,0,0.8);
+      .info-contents { 
+        position: absolute;
+        top: 50%; left: 50%;
+        width: 566px;
+        height: 350px;
+        padding: 30px;
+        border-radius: 30px;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        color: #333;
+        box-sizing: border-box;
+        .info-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 20px; 
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+          .info-close {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
+            border: none;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.1);
+            cursor: pointer;
+          }
+          h2 {
+            font-size: 25px;
+          }
+        }
+        .info-rule {
+          text-align: center;
+          p {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 5px;
+            font-size: 20px;
+            box-sizing: border-box;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 59%,rgba(0,0,0,0.2) 60%,rgba(0,0,0,0.2) 100%);
+          }
+          ul {
+            text-align: left;
+            li {
+              line-height: 1.5;
+              &:first-child {
+                margin-bottom: 5px;
+                font-size: 18px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .intro-link {
+    margin-top: 150px;
+    text-align: center;
+    .button-parrot {
+      .btn-text {
+        position: relative;
+        padding: 13px 32px;
+        border: 3px solid #eee;
+        border-radius: 50px;
+        transition: .2s ease-in-out;
+        .parrot {
+          position: absolute;
+          width: 60px;
+          text-align: center;
+          color: transparent;
+          animation: blink 0.8s infinite;
+          &::before {
+            content: 'Click Me!';
+          }
+          &:nth-child(1) {
+            top: -30px; left: -40px;
+            font-size: 12px;
+            transform: rotate(-20deg);
+            animation-duration: 0.5s;
+          }
+          &:nth-child(2) {
+            top: -20px; right: -40px;
+            font-size: 12px;
+            transform: rotate(15deg);
+            animation-duration: 0.3s;
+          }
+          &:nth-child(3) {
+            top: -60px; left: 15px;
+            font-size: 16px;
+            transform: rotate(10deg);
+            animation-duration: 1s;
+          }
+          &:nth-child(4) {
+            top: -70px; left: 95px;
+            font-size: 18px;
+            transform: rotate(2deg);
+            animation-duration: 0.7s;
+          }
+          &:nth-child(5) {
+            top: 80px; left: 105px;
+            font-size: 14px;
+            transform: rotate(-20deg);
+            animation-duration: 0.8s;
+          }
+          &:nth-child(6) {
+            top: 80px; left: 5px;
+            font-size: 12px;
+            transform: rotate(10deg);
+            animation-duration: 1.2s;
+          }
+        }
+      }
+      &:hover {
+        .btn-text {
+          .parrot {
+            &::before {
+              content: "Do it!";
+              width: 70px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  25%, 75% {
+    color: transparent;
+  }
+
+  40%, 60% {
+    color: #fff;
+  }
+}
